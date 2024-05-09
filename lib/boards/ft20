@@ -15,8 +15,8 @@ FAMILY_EXT="imx8"
 DTB="${SERIES}-evk"
 
 # default config
-LINUX_DEFCONFIG="imx8mp-evk_defconfig"
-UBOOT_DEFCONFIG="imx8mp_evk_defconfig"
+LINUX_DEFCONFIG="ft20_imx8mp_defconfig"
+UBOOT_DEFCONFIG="ft20_imx8mp_uboot_defconfig"
 
 # partition scheme
 GPT="false"
@@ -51,7 +51,7 @@ EXTRA="net.ifnames=0"
 DEFAULT_MOTD="FT20"
 
 # patches
-LINUX_PATCHING="false"
+LINUX_PATCHING="true"
 UBOOT_PATCHDIR="patches/uboot"
 LINUX_PATCHDIR="patches/${FAMILY}"
 
@@ -66,13 +66,13 @@ PRECOMPILED_UBOOT="false"
 PKGVERSION="2023.04"
 PRECOMPILED_UBOOT_DIR="files/boot/uboot/${BOARD}"
 
-# force git (https://github.com/nxp-imx/linux-imx/)
-FORCE_GIT="true"
-GIT_OWN="nxp-imx"
-GIT_REPO="linux-imx"
-GIT_BRANCH="lf-6.1.y"
-GIT_URL="https://github.com"
-GIT_BLOB="blob"
+# force git
+FORCE_GIT="false"
+GIT_OWN=""
+GIT_REPO=""
+GIT_BRANCH=""
+GIT_URL=""
+GIT_BLOB=""
 # git patching
 GIT_PATCHING="false"
 GIT_PATCHDIR="patches/git/${BOARD}/${GIT_REPO}-${GIT_BRANCH}"
@@ -80,7 +80,7 @@ GIT_PATCHDIR="patches/git/${BOARD}/${GIT_REPO}-${GIT_BRANCH}"
 # override userdata file
 FORCE_VERSION="true"
 FORCE_LINUX_VERSION=""
-FORCE_UBOOT_VERSION="v2023.04"
+FORCE_UBOOT_VERSION="v2024.04"
 
 # devicetree and platform
 DEVICETREE="${DTB}.dtb"
